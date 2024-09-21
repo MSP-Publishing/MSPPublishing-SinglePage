@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
     <style>
+
         /* General reset and styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*  reset and styling */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
+            width: 100%;
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             /* background-color: #68dedc;*/
-            background-image: radial-gradient(circle, #e6e6e6, #d3d3d3);
+            background-color: transparent;
+            background-image: radial-gradient(circle, #B3B3B3 70%, #8F8F8F);
             background-size: cover;
         }
 
@@ -28,7 +38,7 @@
 
         /* Centered container */
         .content {
-            max-width: 600px;
+            width: 80%;
             padding: 20px;
             background-color: white;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -47,6 +57,55 @@
             font-size: 20px;
             color: #666;
         }
+
+        /* Divider styling */
+        .divider {
+            width: 100%;
+            margin: 40px 0;
+            border: 0;
+            height: 2px;
+            background: #ccc;
+        }
+
+        /* Carousel styling */
+        .carousel {
+            display: flex;
+            justify-content: center; /* Center items horizontally */
+            gap: 10%;
+            overflow-x: auto;
+            padding: 20px;
+            scroll-snap-type: x mandatory;
+            background-color: #f9f9f9; /* Light background to distinguish it */
+            border-radius: 10px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            width: 200px;
+            text-align: center;
+            scroll-snap-align: center;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Hide the scrollbar for cleaner look */
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -58,6 +117,30 @@
         <h1>Coming Soon</h1>
         <p>Our website is under construction. Stay tuned!</p>
         <!-- <p>Our website is under construction. Stay tuned for something amazing!</p> -->
+    
+    
+        <!-- Divider and title for the carousel section -->
+        <hr class="divider"> <!-- Divider -->
+        <h2>In the meantime, check out these books:</h2>
+
+        <!-- Carousel section -->
+        <div class="carousel">
+            <div class="carousel-item">
+                <a href="https://emmaparkscreative.com/products/emma-loves-to-dance" target="_blank">
+                    <img src="emma-loves-to-dance-cover.jpg" alt="Book 1">
+                </a>
+                <p>Emma Loves to Dance</p>
+            </div>
+            <div class="carousel-item">
+                <a href="https://emmaparkscreative.com/products/emma-loves-rainbows" target="_blank">
+                    <img src="emma-loves-rainbows-cover.png" alt="Book 2">
+                </a>
+                <p>Emma Loves Rainbows</p>
+            </div>
+        </div>
+
     </div>
+
+
 </body>
 </html>
